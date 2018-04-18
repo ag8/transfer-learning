@@ -160,7 +160,7 @@ def main(_):
         # print("Model restored.")
 
         # Pretrain the network on the first part--classifying and splitting
-        for i in range(1, 3):
+        for i in range(1, 1500):
             sys.stdout.write("Pretraining: " + str(i))
             # sys.stdout.write("Pretraining: (%d/1000)   \r" % (i))
             sys.stdout.flush()

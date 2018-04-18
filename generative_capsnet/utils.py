@@ -275,7 +275,9 @@ class TrainingMonitor:
                 test_accuracies.append(np.average(self._hist_records[key][-20:]))
 
         file.write(str(step) + "," + str(test_accuracies[0]) + "," + str(test_accuracies[1]) + "," + str(
-            test_accuracies[2]) + "," + str(test_accuracies[3]) + "," + str(test_accuracies[4]) + "\n")
+            test_accuracies[2]) + "," + str(test_accuracies[3]) + "," + str(test_accuracies[4]) + "," + str(
+            test_accuracies[5]) + "," + str(test_accuracies[6]) + "," + str(test_accuracies[7]) + "," + str(
+            test_accuracies[8]) + "," + str(test_accuracies[9]) + "\n")
 
         print("==========================  *************** ========================================")
 

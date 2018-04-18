@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df10fe0b-dcbd-4bfe-b16f-639748aaf3da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/capsnet/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/convnet/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generation/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generation/input_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generation/input_utils_old.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generation/mmnist.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/capslayer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/capsnet.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/config.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/input_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/main.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/test_ld.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/generative_capsnet/utils.py" />
+      <change beforePath="$PROJECT_DIR$/generative_capsnet/main.py" afterPath="$PROJECT_DIR$/generative_capsnet/main.py" />
+      <change beforePath="$PROJECT_DIR$/generative_capsnet/utils.py" afterPath="$PROJECT_DIR$/generative_capsnet/utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,8 +44,8 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generative_capsnet/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="273" column="59" lean-forward="false" selection-start-line="273" selection-start-column="59" selection-end-line="273" selection-end-column="59" />
+            <state relative-caret-position="564">
+              <caret line="278" column="47" lean-forward="true" selection-start-line="278" selection-start-column="47" selection-end-line="278" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -130,10 +114,10 @@
       <list>
         <option value="$PROJECT_DIR$/generative_capsnet/test_ld.py" />
         <option value="$PROJECT_DIR$/generation/mmnist.py" />
-        <option value="$PROJECT_DIR$/generative_capsnet/main.py" />
         <option value="$PROJECT_DIR$/generative_capsnet/config.py" />
         <option value="$PROJECT_DIR$/generation/input_utils.py" />
         <option value="$PROJECT_DIR$/generative_capsnet/input_utils.py" />
+        <option value="$PROJECT_DIR$/generative_capsnet/main.py" />
         <option value="$PROJECT_DIR$/generative_capsnet/utils.py" />
       </list>
     </option>
@@ -419,8 +403,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generative_capsnet/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="273" column="59" lean-forward="false" selection-start-line="273" selection-start-column="59" selection-end-line="273" selection-end-column="59" />
+        <state relative-caret-position="564">
+          <caret line="278" column="47" lean-forward="true" selection-start-line="278" selection-start-column="47" selection-end-line="278" selection-end-column="47" />
           <folding />
         </state>
       </provider>
