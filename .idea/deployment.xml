@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="On explicit save action">
     <serverData>
+      <paths name="Matlaber">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/andrewg/transfer-learning/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="Titan">
         <serverdata>
           <mappings>

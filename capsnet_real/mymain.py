@@ -70,6 +70,11 @@ def main(_):
     tef6_total_err, tef6_margin_err, tef6_rec_err, tef6_rec_img, tef6_acc = capsnet.comp_output(b_te[16], b_te[17])
     tef8_total_err, tef8_margin_err, tef8_rec_err, tef8_rec_img, tef8_acc = capsnet.comp_output(b_te[18], b_te[19])
 
+    saver = tf.train.Saver()
+
+    # For output data
+    f1 = open('out_caps_train_on_sub.csv', 'w+', 0)
+
     sess = tf.Session()
     coord = tf.train.Coordinator()
     sess.run(tf.global_variables_initializer())
@@ -89,7 +94,7 @@ def main(_):
         print "\treconstruct error:", _rec_err, "\tacc:", _acc,
         print "\texps:", "%.3f" % (cfg.batch_size / (time.time() - start))
 
-        if (b_num % 1000 == 9):
+        if (b_num % 100 == 9):
             _total_err, _margin_err, _rec_err,_acc = sess.run([tes0_total_err, tes0_margin_err, tes0_rec_err, tes0_acc])
             tm.add("tes0_total_err", _total_err)
             tm.add("tes0_margin_err", _margin_err)
@@ -115,28 +120,40 @@ def main(_):
             tm.add("tes8_margin_err", _margin_err)
             tm.add("tes8_rec_err", _rec_err)
             tm.add("tes8_acc", _acc)
-            # _total_err, _margin_err, _rec_err,_acc = sess.run([teR30_total_err, teR30_margin_err, teR30_rec_err, teR30_acc])
-            # tm.add("teR30_total_err", _total_err)
-            # tm.add("teR30_margin_err", _margin_err)
-            # tm.add("teR30_rec_err", _rec_err)
-            # tm.add("teR30_acc", _acc)
-            # _total_err, _margin_err, _rec_err,_acc = sess.run([teR60_total_err, teR60_margin_err, teR60_rec_err, teR60_acc])
-            # tm.add("teR60_total_err", _total_err)
-            # tm.add("teR60_margin_err", _margin_err)
-            # tm.add("teR60_rec_err", _rec_err)
-            # tm.add("teR60_acc", _acc)
-            # _total_err, _margin_err, _rec_err,_acc = sess.run([teR30R_total_err, teR30R_margin_err, teR30R_rec_err, teR30R_acc])
-            # tm.add("teR30R_total_err", _total_err)
-            # tm.add("teR30R_margin_err", _margin_err)
-            # tm.add("teR30R_rec_err", _rec_err)
-            # tm.add("teR30R_acc", _acc)
-            # _total_err, _margin_err, _rec_err,_acc = sess.run([teR60R_total_err, teR60R_margin_err, teR60R_rec_err, teR60R_acc])
-            # tm.add("teR60R_total_err", _total_err)
-            # tm.add("teR60R_margin_err", _margin_err)
-            # tm.add("teR60R_rec_err", _rec_err)
-            # tm.add("teR60R_acc", _acc)
 
-            tm.prints()
+            tm.add("tef0_total_err", _total_err)
+            tm.add("tef0_margin_err", _margin_err)
+            tm.add("tef0_rec_err", _rec_err)
+            tm.add("tef0_acc", _acc)
+            _total_err, _margin_err, _rec_err, _acc = sess.run(
+                [tef2_total_err, tef2_margin_err, tef2_rec_err, tef2_acc])
+            tm.add("tef2_total_err", _total_err)
+            tm.add("tef2_margin_err", _margin_err)
+            tm.add("tef2_rec_err", _rec_err)
+            tm.add("tef2_acc", _acc)
+            _total_err, _margin_err, _rec_err, _acc = sess.run(
+                [tef4_total_err, tef4_margin_err, tef4_rec_err, tef4_acc])
+            tm.add("tef4_total_err", _total_err)
+            tm.add("tef4_margin_err", _margin_err)
+            tm.add("tef4_rec_err", _rec_err)
+            tm.add("tef4_acc", _acc)
+            _total_err, _margin_err, _rec_err, _acc = sess.run(
+                [tef6_total_err, tef6_margin_err, tef6_rec_err, tef6_acc])
+            tm.add("tef6_total_err", _total_err)
+            tm.add("tef6_margin_err", _margin_err)
+            tm.add("tef6_rec_err", _rec_err)
+            tm.add("tef6_acc", _acc)
+            _total_err, _margin_err, _rec_err, _acc = sess.run(
+                [tef8_total_err, tef8_margin_err, tef8_rec_err, tef8_acc])
+            tm.add("tef8_total_err", _total_err)
+            tm.add("tef8_margin_err", _margin_err)
+            tm.add("tef8_rec_err", _rec_err)
+            tm.add("tef8_acc", _acc)
+
+            tm.prints(file=f1, step=b_num)
+
+            save_path = saver.save(sess, "saved/model" + str(b_num) + ".ckpt")
+            print("Model saved in path: %s" % save_path)
 
 
 

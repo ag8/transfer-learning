@@ -148,7 +148,7 @@ def create_training_and_testing_batches_for_sub_MMNIST(batch_size=cfg.batch_size
     return training_batch_X, training_batch_Y, test_batch
 
 
-def create_training_and_testing_batches_for_ld_MMNIST(batch_size=cfg.batch_size, num_threads=cfg.num_threads):
+def create_training_and_testing_batches_for_ld_MMNIST(num_examples=100, batch_size=cfg.batch_size, num_threads=cfg.num_threads):
     """
     Load the multiMNIST dataset, and create X and Y training batches, and a testing batch.
 
@@ -159,7 +159,7 @@ def create_training_and_testing_batches_for_ld_MMNIST(batch_size=cfg.batch_size,
     """
 
     # Load the multiMNIST dataset
-    mmnist = load_submmnist(cfg.dataset_ld)
+    mmnist = load_submmnist(cfg.dataset_ld + str(num_examples))
 
     # Create a batch of training examples
     training_queue = tf.train.slice_input_producer([tf.convert_to_tensor(mmnist["trX"], tf.float32),

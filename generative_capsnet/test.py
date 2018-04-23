@@ -36,77 +36,128 @@ def main(_):
     train_memo_op = tf.train.AdamOptimizer().minimize(train_memo_margin_loss)
 
     # Get test errors and reconstructions
-    (test_0px_total_error,
-     test_0px_margin_error,
-     test_0px_reconstruction_error,
+    (test_0px_sub_total_error,
+     test_0px_sub_margin_error,
+     test_0px_sub_reconstruction_error,
      _,  # For testing, we don't care about the reconstructed images
      _,  # Reconstructed image 1
      _,  # Reconstructed image 2
-     test_0px_accuracy,
-     test_0px_memo_image_reconstructions,
-     test_0px_memo_margin_loss,
-     test_0px_memo_accuracy) = capsnet.compute_output(testing_batch[0], testing_batch[1], keep_prob=1)
+     test_0px_sub_accuracy,
+     test_0px_sub_memo_image_reconstructions,
+     test_0px_sub_memo_margin_loss,
+     test_0px_sub_memo_accuracy) = capsnet.compute_output(testing_batch[0], testing_batch[1], keep_prob=1)
 
-    (test_2px_total_error,
-     test_2px_margin_error,
-     test_2px_reconstruction_error,
+    (test_2px_sub_total_error,
+     test_2px_sub_margin_error,
+     test_2px_sub_reconstruction_error,
      _,  # For testing, we don't care about the reconstructed images
      _,  # Reconstructed image 1
      _,  # Reconstructed image 2
-     test_2px_accuracy,
-     test_2px_memo_image_reconstructions,
-     test_2px_memo_margin_loss,
-     test_2px_memo_accuracy) = capsnet.compute_output(testing_batch[2], testing_batch[3], keep_prob=1)
+     test_2px_sub_accuracy,
+     test_2px_sub_memo_image_reconstructions,
+     test_2px_sub_memo_margin_loss,
+     test_2px_sub_memo_accuracy) = capsnet.compute_output(testing_batch[2], testing_batch[3], keep_prob=1)
 
-    (test_4px_total_error,
-     test_4px_margin_error,
-     test_4px_reconstruction_error,
+    (test_4px_sub_total_error,
+     test_4px_sub_margin_error,
+     test_4px_sub_reconstruction_error,
      _,  # For testing, we don't care about the reconstructed images
      _,  # Reconstructed image 1
      _,  # Reconstructed image 2
-     test_4px_accuracy,
-     test_4px_memo_image_reconstructions,
-     test_4px_memo_margin_loss,
-     test_4px_memo_accuracy) = capsnet.compute_output(testing_batch[4], testing_batch[5], keep_prob=1)
+     test_4px_sub_accuracy,
+     test_4px_sub_memo_image_reconstructions,
+     test_4px_sub_memo_margin_loss,
+     test_4px_sub_memo_accuracy) = capsnet.compute_output(testing_batch[4], testing_batch[5], keep_prob=1)
 
-    (test_6px_total_error,
-     test_6px_margin_error,
-     test_6px_reconstruction_error,
+    (test_6px_sub_total_error,
+     test_6px_sub_margin_error,
+     test_6px_sub_reconstruction_error,
      _,  # For testing, we don't care about the reconstructed images
      _,  # Reconstructed image 1
      _,  # Reconstructed image 2
-     test_6px_accuracy,
-     test_6px_memo_image_reconstructions,
-     test_6px_memo_margin_loss,
-     test_6px_memo_accuracy) = capsnet.compute_output(testing_batch[6], testing_batch[7], keep_prob=1)
+     test_6px_sub_accuracy,
+     test_6px_sub_memo_image_reconstructions,
+     test_6px_sub_memo_margin_loss,
+     test_6px_sub_memo_accuracy) = capsnet.compute_output(testing_batch[6], testing_batch[7], keep_prob=1)
 
-    (test_8px_total_error,
-     test_8px_margin_error,
-     test_8px_reconstruction_error,
+    (test_8px_sub_total_error,
+     test_8px_sub_margin_error,
+     test_8px_sub_reconstruction_error,
      _,  # For testing, we don't care about the reconstructed images
      _,  # Reconstructed image 1
      _,  # Reconstructed image 2
-     test_8px_accuracy,
-     test_8px_memo_image_reconstructions,
-     test_8px_memo_margin_loss,
-     test_8px_memo_accuracy) = capsnet.compute_output(testing_batch[8], testing_batch[9], keep_prob=1)
+     test_8px_sub_accuracy,
+     test_8px_sub_memo_image_reconstructions,
+     test_8px_sub_memo_margin_loss,
+     test_8px_sub_memo_accuracy) = capsnet.compute_output(testing_batch[8], testing_batch[9], keep_prob=1)
 
+    (test_0px_full_total_error,
+     test_0px_full_margin_error,
+     test_0px_full_reconstruction_error,
+     _,  # For testing, we don't care about the reconstructed images
+     _,  # Reconstructed image 1
+     _,  # Reconstructed image 2
+     test_0px_full_accuracy,
+     test_0px_full_memo_image_reconstructions,
+     test_0px_full_memo_margin_loss,
+     test_0px_full_memo_accuracy) = capsnet.compute_output(testing_batch[10], testing_batch[11], keep_prob=1)
 
+    (test_2px_full_total_error,
+     test_2px_full_margin_error,
+     test_2px_full_reconstruction_error,
+     _,  # For testing, we don't care about the reconstructed images
+     _,  # Reconstructed image 1
+     _,  # Reconstructed image 2
+     test_2px_full_accuracy,
+     test_2px_full_memo_image_reconstructions,
+     test_2px_full_memo_margin_loss,
+     test_2px_full_memo_accuracy) = capsnet.compute_output(testing_batch[12], testing_batch[13], keep_prob=1)
+
+    (test_4px_full_total_error,
+     test_4px_full_margin_error,
+     test_4px_full_reconstruction_error,
+     _,  # For testing, we don't care about the reconstructed images
+     _,  # Reconstructed image 1
+     _,  # Reconstructed image 2
+     test_4px_full_accuracy,
+     test_4px_full_memo_image_reconstructions,
+     test_4px_full_memo_margin_loss,
+     test_4px_full_memo_accuracy) = capsnet.compute_output(testing_batch[14], testing_batch[15], keep_prob=1)
+
+    (test_6px_full_total_error,
+     test_6px_full_margin_error,
+     test_6px_full_reconstruction_error,
+     _,  # For testing, we don't care about the reconstructed images
+     _,  # Reconstructed image 1
+     _,  # Reconstructed image 2
+     test_6px_full_accuracy,
+     test_6px_full_memo_image_reconstructions,
+     test_6px_full_memo_margin_loss,
+     test_6px_full_memo_accuracy) = capsnet.compute_output(testing_batch[16], testing_batch[17], keep_prob=1)
+
+    (test_8px_full_total_error,
+     test_8px_full_margin_error,
+     test_8px_full_reconstruction_error,
+     _,  # For testing, we don't care about the reconstructed images
+     _,  # Reconstructed image 1
+     _,  # Reconstructed image 2
+     test_8px_full_accuracy,
+     test_8px_full_memo_image_reconstructions,
+     test_8px_full_memo_margin_loss,
+     test_8px_full_memo_accuracy) = capsnet.compute_output(testing_batch[18], testing_batch[19], keep_prob=1)
 
     # For model saving
     saver = tf.train.Saver()
 
-
     # For output data
-    f1 = open('out.csv', 'w+')
-
+    f1 = open('out_capsgan_test_on_full.csv', 'w+', 0)
 
     with tf.Session() as sess:
         # Initialize the graph, and receive the queue coordinator and the training monitor
         coord, training_monitor = u.init(sess)
 
-        # saver.restore(sess, "/home/urops/andrewg/capsule-b/test-1c/saved/model.ckpt")
-        # print("Model restored.")
+        saver.restore(sess, "/home/urops/andrewg/transfer-learning/generative_capsnet/saved_state/model51209.ckpt")
+        print("Model restored.")
 
         # Pretrain the network on the first part--classifying and splitting
         for i in range(1, 1500):
@@ -158,42 +209,59 @@ def main(_):
                 (curr_total_error,
                  curr_margin_error,
                  curr_reconstruction_error,
-                 curr_accuracy,
                  curr_memo_margin_error,
                  curr_memo_accuracy,
+                 curr_accuracy,
                  curr_accuracy_2px,
                  curr_accuracy_4px,
                  curr_accuracy_6px,
-                 curr_accuracy_8px) = sess.run([test_0px_total_error,
-                                                test_0px_margin_error,
-                                                test_0px_reconstruction_error,
-                                                test_0px_accuracy,
-                                                test_0px_memo_margin_loss,
-                                                test_0px_memo_accuracy,
-                                                test_2px_accuracy,
-                                                test_4px_accuracy,
-                                                test_6px_accuracy,
-                                                test_8px_accuracy])
+                 curr_accuracy_8px,
+                 curr_sub_accuracy,
+                 curr_sub_accuracy_2px,
+                 curr_sub_accuracy_4px,
+                 curr_sub_accuracy_6px,
+                 curr_sub_accuracy_8px) = sess.run([test_0px_full_total_error,
+                                                    test_0px_full_margin_error,
+                                                    test_0px_full_reconstruction_error,
+                                                    test_0px_full_memo_margin_loss,
+                                                    test_0px_full_memo_accuracy,
+                                                    test_0px_full_accuracy,
+                                                    test_2px_full_accuracy,
+                                                    test_4px_full_accuracy,
+                                                    test_6px_full_accuracy,
+                                                    test_8px_full_accuracy,
+                                                    test_0px_sub_accuracy,
+                                                    test_2px_sub_accuracy,
+                                                    test_4px_sub_accuracy,
+                                                    test_6px_sub_accuracy,
+                                                    test_8px_sub_accuracy
+                                                    ])
 
                 # Add the losses to the training monitor
-                training_monitor.addsixtest(curr_total_error,
-                                            curr_margin_error,
-                                            curr_reconstruction_error,
-                                            curr_accuracy,
-                                            curr_memo_margin_error,
-                                            curr_memo_accuracy,
-                                            curr_accuracy_2px,
-                                            curr_accuracy_4px,
-                                            curr_accuracy_6px,
-                                            curr_accuracy_8px)
+                training_monitor.addeleventest(curr_total_error,
+                                               curr_margin_error,
+                                               curr_reconstruction_error,
+                                               curr_memo_margin_error,
+                                               curr_memo_accuracy,
+                                               curr_accuracy,
+                                               curr_accuracy_2px,
+                                               curr_accuracy_4px,
+                                               curr_accuracy_6px,
+                                               curr_accuracy_8px,
+                                               curr_sub_accuracy,
+                                               curr_sub_accuracy_2px,
+                                               curr_sub_accuracy_4px,
+                                               curr_sub_accuracy_6px,
+                                               curr_sub_accuracy_8px
+                                               )
 
                 # Display the current training performance
                 training_monitor.prints(file=f1, step=batch_num)
                 f1.flush()
 
                 # Save the model
-                save_path = saver.save(sess, "saved/model" + str(batch_num) + ".ckpt")
-                print("Model saved in path: %s" % save_path)
+                # save_path = saver.save(sess, "saved/model" + str(batch_num) + ".ckpt")
+                # print("Model saved in path: %s" % save_path)
 
     f1.close()
 

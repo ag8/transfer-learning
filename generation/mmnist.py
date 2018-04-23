@@ -504,19 +504,21 @@ def genMMNIST4(mnistpath, outpath, samples_tr=200000, samples_te=10000):
     _mnist_to_mmnist4(teX, teY, samples_te, os.path.join(outpath, 'teR60R'), shift_pixels=8, rotation_range=[30, 60], use_shifting=True, rotate=True)
 
 
-dataset_path = '/home/andrew/datasets/ld10'
+dataset_path = '/home/andrew/datasets/ldtest'
 # genMMNIST_with_full_test('/home/andrew/mnist', dataset_path, exclude_digit_for_test=6, samples_tr=200000, samples_te=10000)
 # mmnist = load_mmnist(dataset_path, samples_tr=200000, samples_te=10000)
 # gensubmmnist('/home/andrew/mnist', dataset_path, exclude_digit=6, samples_tr=200000, samples_te=10000)
 # mmnist = load_mmnist(dataset_path, samples_tr=200000, samples_te=10000)
-genldmmnist('/home/andrew/mnist', dataset_path, ld_digit=6, num_examples=10, samples_tr=200000, samples_te=10000)
-mmnist = load_mmnist(dataset_path, samples_tr=200000, samples_te=10000)
+genldmmnist('/home/andrew/mnist', dataset_path, ld_digit=6, num_examples=1, samples_tr=2000, samples_te=100)
+mmnist = load_mmnist(dataset_path, samples_tr=2000, samples_te=100)
 
-image = mmnist["tefR30RX"][9][:, :, 0]
-digits = mmnist["tefR30RY"][9]
-print "digits:", digits
-plt.imshow(image)
-plt.show()
+for i in range(0, 100):
+    image = mmnist["trX"][i][:, :, 0]
+    digits = mmnist["trY"][i]
+    if 6 in digits:
+        print "digits:", digits
+        plt.imshow(image)
+        plt.savefig('example' + str(i) + '.png')
 # print "showitng digits:", mmnist[1][11,:]
 # plt.show()
 # plt.imshow(mmnist[2][11,:,:,0])
