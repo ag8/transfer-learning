@@ -1,2 +1,4 @@
 # transfer-learning
-Low-data transfer learning using capsule networks.
+Some testing code for capsule network experiments.
+
+(very old; does not have any of the latest results).
